@@ -1,0 +1,22 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: scheduler-config
+  namespace: kube-system
+data:
+  policy.cfg: |
+    {
+        "kind" : "Policy",
+        "apiVersion" : "v1",
+        "metadata" : {
+            "name": "scheduler-policy-config",
+            "namespace": "kube-system"
+        },
+        "priorities" : [
+          {"name" : "MostRequestedPriority", "weight" : 10},
+          {"name" : "BalancedResourceAllocation", "weight" : 1},
+          {"name" : "ServiceSpreadingPriority", "weight" : 1},
+          {"name" : "EqualPriority", "weight" : 1}
+        ]
+
+    }
