@@ -15,7 +15,7 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-#        resources:
-#          requests:
-#            cpu: 100m
-#            memory: 10Gi
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
